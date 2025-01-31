@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 00:46:30 by adichou           #+#    #+#             */
-/*   Updated: 2025/01/31 06:05:49 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/01 00:25:31 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_pixel_put(t_mlx *mlx, int x, int y, int color)
 {
 	int										pixel_index;
 
-	pixel_index = (y * mlx->size_line) + (x * mlx->bit_per_pixel / 8);
+	pixel_index = (y * mlx->sl) + (x * mlx->bpp / 8);
 	*(unsigned int *)(mlx->data + pixel_index) = color;
 }
 
@@ -28,7 +28,7 @@ void	drawline(t_mlx *mlx, int x0, int y0, int x1, int y1)
 
 	for(;;)
 	{
-		if (x0 > 0 && y0 > 0 && x0 < RESOLUTION_X && y0 < RESOLUTION_Y)
+		if (x0 > 0 && y0 > 0 && x0 < RES_X && y0 < RES_Y)
 			ft_pixel_put(mlx, x0, y0, 0xFF00FF);
 		if (x0==x1 && y0==y1)
 			break;

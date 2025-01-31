@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:27:34 by adichou           #+#    #+#             */
-/*   Updated: 2025/01/31 06:40:10 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/01 00:25:35 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,29 @@
 # include <math.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# ifndef RESOLUTION_X
-#  define RESOLUTION_X 1920
+# ifndef RES_X
+#  define RES_X 1920
 # endif
-# ifndef RESOLUTION_Y
-#  define RESOLUTION_Y 1080
+# ifndef RES_Y
+#  define RES_Y 1080
 # endif
 # ifndef MULTIPLICATEUR
 #  define MULTIPLICATEUR 30
 # endif
 # ifndef ZMULTIPLICATEUR
-#  define ZMULTIPLICATEUR 30
+#  define ZMULTIPLICATEUR 5
 # endif
 # ifndef MOVSPEED
-#  define MOVSPEED 30
+#  define MOVSPEED 20
 # endif
 # ifndef ZOOMSPEED
-#  define ZOOMSPEED 1.1
+#  define ZOOMSPEED 1.03
 # endif
 # ifndef DEZOOMSPEED
-#  define DEZOOMSPEED 0.9
+#  define DEZOOMSPEED 0.95
 # endif
 # ifndef ROTATESPEED
-#  define ROTATESPEED 0.1
+#  define ROTATESPEED 0.05
 # endif
 # ifndef ADDHEIGHTSPEED
 #  define ADDHEIGHTSPEED 1.5
@@ -49,7 +49,7 @@
 #  define RMHEIGHTSPEED 0.8
 # endif
 # ifndef BACKGROUNDCOLOR
-#  define BACKGROUNDCOLOR 0x000000
+#  define BACKGROUNDCOLOR 0xC7E5FF
 # endif
 
 typedef struct s_mlx
@@ -58,8 +58,8 @@ typedef struct s_mlx
 	void									*winptr;
 	void									*img;
 	char									*data;
-	int										bit_per_pixel;
-	int										size_line;
+	int										bpp;
+	int										sl;
 	int										endian;
 	float									**tab;
 	int										size_tab;
