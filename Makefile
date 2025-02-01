@@ -6,7 +6,7 @@
 #    By: adichou <adichou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 01:30:46 by adichou           #+#    #+#              #
-#    Updated: 2025/02/01 00:29:01 by adichou          ###   ########.fr        #
+#    Updated: 2025/02/01 03:03:21 by adichou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRC = $(SRC_DIR)/main.c \
 		$(SRC_DIR)/r_rotate_functions.c \
 		$(SRC_DIR)/move_functions.c \
 		$(SRC_DIR)/zoom_functions.c \
+		$(SRC_DIR)/mlx_functions.c \
+		$(SRC_DIR)/mlx_hook_functions.c \
 		$(SRC_DIR)/draw_line_functions.c
 
 OBJ = $(SRC:.c=.o)
@@ -36,8 +38,6 @@ MLX_FLAGS = -lmlx -lXext -lX11 -lm
 # Compilateur et options
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g -O3
-
-
 
 # Règles
 all: $(NAME)

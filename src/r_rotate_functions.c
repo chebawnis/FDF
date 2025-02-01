@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 19:58:37 by adichou           #+#    #+#             */
-/*   Updated: 2025/01/31 23:42:54 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/01 03:18:50 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	r_rotate_x(float **tab, int size_tab)
 {
 	int										i;
-	float 									x;
-	float 									z;
-	
+	float									x;
+	float									z;
+
 	i = 0;
 	while (i < size_tab)
 	{
@@ -32,9 +32,9 @@ void	r_rotate_x(float **tab, int size_tab)
 void	r_rotate_y(float **tab, int size_tab)
 {
 	int										i;
-	float 									x;
-	float 									z;
-	
+	float									x;
+	float									z;
+
 	i = 0;
 	while (i < size_tab)
 	{
@@ -49,9 +49,9 @@ void	r_rotate_y(float **tab, int size_tab)
 void	r_rotate_z(float **tab, int size_tab)
 {
 	int										i;
-	float 									x;
-	float 									z;
-	
+	float									x;
+	float									z;
+
 	i = 0;
 	while (i < size_tab)
 	{

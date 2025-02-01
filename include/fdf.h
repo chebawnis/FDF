@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 21:27:34 by adichou           #+#    #+#             */
-/*   Updated: 2025/02/01 00:25:35 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/01 03:33:15 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,47 +63,45 @@ typedef struct s_mlx
 	int										endian;
 	float									**tab;
 	int										size_tab;
-	int										largeur_x;
+	int										lrg_x;
 	int										longueur_y;
 	float									x_lag;
 	float									y_lag;
 	int										keys[256];
-} t_mlx;
+}	t_mlx;
 
-
-int							gnl_split(int *buf_read, int fd, char buffer[], int *buf_pos);
-char						*get_next_line(int fd);
-int							countwords(char const *s);
-size_t						count_values(int fd);
-size_t						count_values(int fd);
-int							fill_line(char *line, float **tab, int lineindex, int *points_lus, size_t oldsize);
-void						fill_tab(int fd, float **tab, int	*longueur_x, int *largeur_y);
-float						v_abs(float n);
-void						rotate_x(float **tab, int size_tab);
-void						rotate_y(float **tab, int size_tab);
-void						rotate_z(float **tab, int size_tab);
-void						r_rotate_x(float **tab, int size_tab);
-void						r_rotate_y(float **tab, int size_tab);
-void						r_rotate_z(float **tab, int size_tab);
-void						move_tab_right(float *x_lag);
-void						move_tab_left(float *x_lag);
-void						move_tab_down(float *x_lag);
-void						move_tab_up(float *x_lag);
-void						dezoom_tab(float **tab, float size_tab);
-void						zoom_tab(float **tab, float size_tab);
-// void						align_x(float **tab, float size_tab, float r);
-// void						align_y(float **tab, float size_tab, float r);
-// void						align_z(float **tab, float size_tab, float r);
-// void						put_back_x(float **tab, float size_tab, float r);
-// void						put_back_y(float **tab, float size_tab, float r);
-// void						put_back_z(float **tab, float size_tab, float r);
-void						center_tab(float **tab, int largeur_x, int longueur_y);
-void						drawline(t_mlx *mlx, int x0, int y0, int x1, int y1);
-void						ft_pixel_put(t_mlx *mlx, int x, int y, int color);
-void						display_lines(t_mlx *mlx);
-void						ft_clear_img(t_mlx *mlx);
-void						display(t_mlx *mlx);
-
-
+int			gnl_split(int *buf_read, int fd, char buffer[], int *buf_pos);
+char		*get_next_line(int fd);
+int			countwords(char const *s);
+size_t		count_values(int fd);
+size_t		count_values(int fd);
+int			fill_line(char *line, float **tab, int lineindex, int *points_lus);
+void		fill_tab(int fd, float **tab, int	*longueur_x, int *largeur_y);
+float		v_abs(float n);
+void		rotate_x(float **tab, int size_tab);
+void		rotate_y(float **tab, int size_tab);
+void		rotate_z(float **tab, int size_tab);
+void		r_rotate_x(float **tab, int size_tab);
+void		r_rotate_y(float **tab, int size_tab);
+void		r_rotate_z(float **tab, int size_tab);
+void		move_tab_right(float *x_lag);
+void		move_tab_left(float *x_lag);
+void		move_tab_down(float *x_lag);
+void		move_tab_up(float *x_lag);
+void		dezoom_tab(float **tab, float size_tab);
+void		zoom_tab(float **tab, float size_tab);
+void		center_tab(float **tab, int lrg_x, int longueur_y);
+void		drawline(t_mlx *mlx, int p0[2], int p1[2]);
+void		ft_pixel_put(t_mlx *mlx, int x, int y, int color);
+void		display_lines(t_mlx *mlx);
+void		display(t_mlx *mlx);
+void		set_mlx(t_mlx *mlx, int fd);
+int			key_hook(int keycode, t_mlx *mlx);
+int			key_release_hook(int keycode, t_mlx *mlx);
+int			loop_hook_bis(t_mlx *mlx);
+int			loop_hook(t_mlx *mlx);
+int			close_window(t_mlx *mlx);
+void		display(t_mlx *mlx);
+void		display_tab(t_mlx *mlx);
 
 #endif
