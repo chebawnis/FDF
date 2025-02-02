@@ -6,13 +6,13 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:44:41 by adichou           #+#    #+#             */
-/*   Updated: 2025/01/22 20:44:52 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/01 03:19:20 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
 
-void	zoom_tab(float (*tab)[3], float size_tab)
+void	zoom_tab(float **tab, float size_tab)
 {
 	int										i;
 
@@ -26,7 +26,7 @@ void	zoom_tab(float (*tab)[3], float size_tab)
 	}
 }
 
-void	dezoom_tab(float (*tab)[3], float size_tab)
+void	dezoom_tab(float **tab, float size_tab)
 {
 	int										i;
 

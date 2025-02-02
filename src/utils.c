@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:39:49 by adichou           #+#    #+#             */
-/*   Updated: 2025/01/22 19:43:36 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/01 03:19:10 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,6 @@ int	countwords(char const *s)
 			i++;
 	}
 	return (count);
-}
-
-void	*ft_realloc(void *ptr, size_t oldsize, size_t newsize)
-{
-	if (newsize == 0)
-	{
-		free(ptr);
-		return (NULL);
-	}
-	if (!ptr || oldsize == 0)
-		return (malloc(newsize));
-	void									*newmem;
-	size_t									size_to_copy;
-	
-	newmem = malloc(newsize);
-	if (!newmem)
-		return (NULL);
-	if (oldsize < newsize)
-		size_to_copy = oldsize;
-	else
-		size_to_copy = newsize;
-	ft_memmove(newmem, ptr, size_to_copy);
-	free(ptr);
-	return (newmem);
 }
 
 float	v_abs(float n)
