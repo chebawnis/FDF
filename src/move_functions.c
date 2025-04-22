@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 20:41:25 by adichou           #+#    #+#             */
-/*   Updated: 2025/02/01 04:33:53 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/04 08:27:40 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	move_tab_up(float *y_lag)
 void	center_tab(float **tab, int lrg_x, int longueur_y)
 {
 	int										i;
-	int										nline; // = size_tab
-	float									half_x; 
+	int										nline;
+	float									half_x;
 	float									half_y;
 
 	i = 0;

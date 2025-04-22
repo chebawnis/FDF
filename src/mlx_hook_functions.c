@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:35:14 by adichou           #+#    #+#             */
-/*   Updated: 2025/02/01 05:43:27 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/04 08:33:32 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	key_hook(int keycode, t_mlx *mlx)
 		close_window(mlx);
 	else if (keycode == 114)
 	{
-		mlx->poudreuse *= -1;	
+		mlx->poudreuse *= -1;
 		display(mlx);
 	}
 	else if (keycode < 256)
@@ -49,17 +49,17 @@ int	loop_hook_bis(t_mlx *mlx)
 int	loop_hook(t_mlx *mlx)
 {
 	if (mlx->keys[105])
-		rotate_x(mlx->tab, mlx->size_tab);
-	if (mlx->keys[111])
-		rotate_y(mlx->tab, mlx->size_tab);
-	if (mlx->keys[112])
-		rotate_z(mlx->tab, mlx->size_tab);
-	if (mlx->keys[107])
 		r_rotate_x(mlx->tab, mlx->size_tab);
+	if (mlx->keys[111])
+		rotate_z(mlx->tab, mlx->size_tab);
+	if (mlx->keys[112])
+		rotate_x(mlx->tab, mlx->size_tab);
+	if (mlx->keys[107])
+		rotate_y(mlx->tab, mlx->size_tab);
 	if (mlx->keys[108])
-		r_rotate_y(mlx->tab, mlx->size_tab);
-	if (mlx->keys[59])
 		r_rotate_z(mlx->tab, mlx->size_tab);
+	if (mlx->keys[59])
+		r_rotate_y(mlx->tab, mlx->size_tab);
 	if (mlx->keys[101])
 		zoom_tab(mlx->tab, mlx->size_tab);
 	if (mlx->keys[113])

@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:39:49 by adichou           #+#    #+#             */
-/*   Updated: 2025/02/01 03:19:10 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/03 06:54:05 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,14 @@ float	v_abs(float n)
 	if (n > 0)
 		return (n);
 	return (n * -1);
+}
+
+int	ft_putstr(char *str)
+{
+	int										i;
+
+	i = 0;
+	while (str[i])
+		ft_putchar_fd(str[i ++], 1);
+	return (0);
 }

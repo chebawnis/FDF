@@ -6,7 +6,7 @@
 /*   By: adichou <adichou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:31:05 by adichou           #+#    #+#             */
-/*   Updated: 2025/02/01 06:18:04 by adichou          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:18:59 by adichou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	set_mlx(t_mlx *mlx, int fd)
 	mlx->poudreuse = 1;
 	while (i < mlx->size_tab)
 	{
-		mlx->tab[i] = malloc(3 * sizeof(float));
+		mlx->tab[i] = malloc(4 * sizeof(float));
 		if (!mlx->tab[i])
 		{
 			while (--i >= 0)
@@ -60,6 +60,8 @@ void	display(t_mlx *mlx)
 {
 	int										*buff;
 	int										total;
+	int										p0[3];
+	int										p1[3];
 	int										i;
 
 	buff = (int *)mlx->data;
@@ -70,17 +72,28 @@ void	display(t_mlx *mlx)
 	if (mlx->poudreuse == -1)
 		display_dots(mlx);
 	else
-		display_lines(mlx);
+		display_lines(mlx, p0, p1);
 	mlx_put_image_to_window(mlx->ptr, mlx->winptr, mlx->img, 0, 0);
 }
 
 void	set_display(t_mlx *mlx)
 {
 	int										i;
+	int										x;
+	int										y;
+	int										rx;
+	int										ry;
 
 	i = 0;
-	zoom_tab(mlx->tab, mlx->size_tab);
-	while (i < 30)
+	x = mlx->x_lag;
+	y = mlx->y_lag;
+	rx = RES_X / 6;
+	ry = RES_Y / 6;
+	if (!mlx->tab || !*mlx->tab)
+		return ;
+	while (mlx->tab[0][0] + x > rx && mlx->tab[0][0] + y > ry)
+		zoom_tab(mlx->tab, mlx->size_tab);
+	while (i < 5)
 	{
 		rotate_x(mlx->tab, mlx->size_tab);
 		rotate_y(mlx->tab, mlx->size_tab);
